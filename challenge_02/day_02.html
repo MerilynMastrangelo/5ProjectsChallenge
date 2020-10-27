@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd Day Challange - Expense Tracker</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<style>
+    .result{
+        width: 100%;
+    }
+    table{
+        border-collapse: collapse;
+        min-width: 700px;
+        margin: 50px auto;
+        color: #242424;
+    }
+
+    td, th{
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    tr:nth-child(even){
+        background-color: #ddd;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>2nd Day Challenge</h1>
+        <form>
+            <h2>Expense Tracker</h2>
+            <label for="name">Name: </label><input type="text" name="Name" id="name"><br><br>
+            <label for="date">Date: </label><input type="date" name="Ndate" id="date" placeholder="dd-mm-yyyy"><br><br>
+            <label for="amount">Amount: </label><input type="number" name="Namount" id="amount"><br><br>
+            <button type="submit">Add Expense</button>
+        </form>
+        <div class="result">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+                <tr id="row">
+                    <td colspan="3">No expenses added yet!</td>
+                
+                    <!-- <caption>Monthly savings</caption> -->
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="expenseTracker.js" defer></script>
+</body>
+</html>
