@@ -17,16 +17,20 @@ form.addEventListener('submit', (e) => {
 })
 
 const addExpTcker = () => {
-    // Remove the first row
-    row.remove();
-    // Add a new row in every interation
-    let addRow = document.createElement('tr');
-    // Display it
-    addRow.innerHTML = `
-            <td>${nameValue.value}</td>
-            <td>${dateValue.value}</td>
-            <td>£${amountValue.value}</td>
-    `;
-    // Append the added row in the table
-    table.appendChild(addRow);
+    if(nameValue.value <= 0 || dateValue.value <= 0 || amountValue.value <= 0){
+        alert('Please insert an expense');
+    }else{
+        // Remove the first row
+        row.remove();
+        // Add a new row in every interation
+        let addRow = document.createElement('tr');
+        // Display it
+        addRow.innerHTML = `
+                <td>${nameValue.value}</td>
+                <td>${dateValue.value}</td>
+                <td>£${amountValue.value}</td>
+        `;
+        // Append the added row in the table
+        table.appendChild(addRow);
+    }
 }
