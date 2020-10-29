@@ -10,14 +10,6 @@ const close = document.querySelector('.close');
 
 const modalContent = document.querySelector('.modal-content');
 
-form.addEventListener('submit', (ev) => {
-    ev.preventDefault();
-    addNote(counter);
-    
-    noteInput.value = '';
-    noteInput.focus();
-    counter++;
-});
 
 const addNote = (counter) => {
     none.remove();
@@ -76,3 +68,12 @@ close.addEventListener('click', () => {
 window.addEventListener('click', (e) => {
     if(e.target === modal) modal.style.display = "none";
 })
+
+form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    addNote(counter);
+    
+    noteInput.value = '';
+    noteInput.focus();
+    counter++;
+});
