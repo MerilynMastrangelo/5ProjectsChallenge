@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5th Day Challenge - Memory Game</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .img-card{
+            width: 100%;
+        }
+        .cards{
+            margin: 0 30%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            align-items: center;
+            
+        }
+        .memory-card:active{
+            transform: scale(.97);
+            transition: transform .3s;
+        }
+        .memory-card{
+            box-sizing: border-box;
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            background-color: rgb(48, 90, 90);
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5th Day Challenge</h1>
+        <h2>Memory Game</h2>
+        <div class="cards">
+            <div class="memory-card">
+                <img class="img-card" src="img/apple.png" alt="apple">
+            </div>
+            <div class="memory-card">
+                <img class="img-card" src="img/cherry.png" alt="cherries">
+            </div>
+            <div class="memory-card">
+                <img class="img-card" src="img/grapes.png" alt="grapes">
+            </div>
+            <div class="memory-card">
+                <img class="img-card" src="img/apple.png" alt="apple">
+            </div>
+            <div class="memory-card">
+                <img class="img-card" src="img/cherry.png" alt="cherries">
+            </div>
+            <div class="memory-card">
+                <img class="img-card" src="img/grapes.png" alt="grapes">
+            </div>
+        </div>
+    </div>
+    <script src="memoryGame.js"></script>
+</body>
+</html>
