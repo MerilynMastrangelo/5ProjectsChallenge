@@ -8,26 +8,45 @@
     <style>
         .img-card{
             width: 100%;
+            height: auto;
+            display: block;
+            transform: rotateY(180deg);
+        }
+        .hidden{
+            display: none;
         }
         .cards{
-            margin: 0 30%;
+            margin: 0 25%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
+            grid-gap: 50px;
             align-items: center;
-            
+        }
+        .memory-card{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
         }
         .memory-card:active{
             transform: scale(.97);
             transition: transform .3s;
         }
-        .memory-card{
+        .memory-card.flip{
+            transform: rotateY(180deg);
+        }
+        .overlay{
+            position: absolute;
+            width: 200px;
+            height: 200px;
             box-sizing: border-box;
-            width: 150px;
-            height: 150px;
-            margin: 5px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
             background-color: rgb(48, 90, 90);
             transform: scale(1);
+            backface-visibility: hidden;
         }
     </style>
 </head>
@@ -36,23 +55,32 @@
         <h1>5th Day Challenge</h1>
         <h2>Memory Game</h2>
         <div class="cards">
-            <div class="memory-card">
+            <div class="memory-card" data-fruit="apple">
+                <div class="overlay"></div>
+                    <img class="img-card" src="img/apple.png" alt="apple">
+                
+            </div>
+            <div class="memory-card" data-fruit="cherry">
+                <div class="overlay"></div>
+                    <img class="img-card" src="img/cherry.png" alt="cherries">
+                
+            </div>
+            <div class="memory-card" data-fruit="grapes">
+                <div class="overlay"></div>
+                    <img class="img-card" src="img/grapes.png" alt="grapes">
+                
+            </div>
+            <div class="memory-card" data-fruit="apple">
                 <img class="img-card" src="img/apple.png" alt="apple">
+                <div class="overlay"></div>
             </div>
-            <div class="memory-card">
+            <div class="memory-card" data-fruit="cherry">
                 <img class="img-card" src="img/cherry.png" alt="cherries">
+                <div class="overlay"></div>
             </div>
-            <div class="memory-card">
+            <div class="memory-card" data-fruit="grapes">
                 <img class="img-card" src="img/grapes.png" alt="grapes">
-            </div>
-            <div class="memory-card">
-                <img class="img-card" src="img/apple.png" alt="apple">
-            </div>
-            <div class="memory-card">
-                <img class="img-card" src="img/cherry.png" alt="cherries">
-            </div>
-            <div class="memory-card">
-                <img class="img-card" src="img/grapes.png" alt="grapes">
+                <div class="overlay"></div>
             </div>
         </div>
     </div>
