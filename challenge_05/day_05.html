@@ -16,7 +16,7 @@
             display: none;
         }
         .cards{
-            margin: 0 25%;
+            margin: 5% 25%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 50px;
@@ -28,14 +28,11 @@
             height: 200px;
             transform-style: preserve-3d;
         }
-        .memory-card:active{
-            transform: scale(.97);
-            transition: transform .3s;
-        }
+        
         .memory-card.flip{
             transform: rotateY(180deg);
         }
-        .overlay{
+        .back-face{
             position: absolute;
             width: 200px;
             height: 200px;
@@ -45,7 +42,6 @@
             left: 0;
             top: 0;
             background-color: rgb(48, 90, 90);
-            transform: scale(1);
             backface-visibility: hidden;
         }
     </style>
@@ -56,34 +52,37 @@
         <h2>Memory Game</h2>
         <div class="cards">
             <div class="memory-card" data-fruit="apple">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
                     <img class="img-card" src="img/apple.png" alt="apple">
                 
             </div>
             <div class="memory-card" data-fruit="cherry">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
                     <img class="img-card" src="img/cherry.png" alt="cherries">
                 
             </div>
             <div class="memory-card" data-fruit="grapes">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
                     <img class="img-card" src="img/grapes.png" alt="grapes">
                 
             </div>
             <div class="memory-card" data-fruit="apple">
                 <img class="img-card" src="img/apple.png" alt="apple">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
             </div>
             <div class="memory-card" data-fruit="cherry">
                 <img class="img-card" src="img/cherry.png" alt="cherries">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
             </div>
             <div class="memory-card" data-fruit="grapes">
                 <img class="img-card" src="img/grapes.png" alt="grapes">
-                <div class="overlay"></div>
+                <div class="back-face"></div>
             </div>
         </div>
+        <p>Score: <span class="score">0</span></p>
+        <p>Failed Attempts: <span class="failed-attempt">0</span></p>
     </div>
+    
     <script src="memoryGame.js"></script>
 </body>
 </html>
