@@ -22,27 +22,19 @@ const addTasks = (inputText) => {
     if(inputText.value <= 0){
         alert('Please fill the input');
     }else{
-        // First creates a task then append to unordered list created
-        const task = document.createElement('li');
-        task.innerHTML = inputText.value;
-        unorderedList.appendChild(task);
-
-        deleteFc(task);
+        
+        unorderedList.innerHTML += `<li class="list-group-item">${inputText.value} <a href="#" class="btn btn-danger btn-sm delete ml-4">X</a></li>`;
+        list.appendChild(unorderedList);
+        
     }
 }
 
-const deleteFc = (task) => {
-    // Create a delete btn and append to task
-    let deleteBtn;
-    deleteBtn = document.createElement('button');
-    deleteBtn.innerHTML = 'Delete';
-    task.appendChild(deleteBtn);
-    // When delete button are triggered we append remove the task from ul
-    deleteBtn.addEventListener('click', () => {
-        unorderedList.removeChild(task);
-    });
-}
+unorderedList.addEventListener('click', (e) => {
+    deleteFc(e.target.parentElement);
+})
 
- 
+function deleteFc(element) {
+    element.remove();
+}
 
 
