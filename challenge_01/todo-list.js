@@ -3,9 +3,7 @@ const btn = document.querySelector('form');
 let list = document.querySelector('.result');
 const inputText = document.querySelector('input');
 const unorderedList = document.createElement('ul');
-// Change Name Project
-const nameProject = document.querySelector('h1');
-nameProject.innerText = '1st day Challenge -- Todo-List';
+
 // Add unordered list - ul HTML tag
 list.appendChild(unorderedList);
 
