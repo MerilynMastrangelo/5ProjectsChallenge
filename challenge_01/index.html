@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../bootstrap.min.css">
     <style>
-    i{
+    .delete{
         cursor: pointer;
     }
     .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
@@ -29,10 +29,10 @@
                     </div>
             </form>
         </div>
-        <div class="result mt-5">
+        <div id="result" class="result mt-5">
             <h4></h4>
             <ul class="list-group">
-                <li class="list-group-item mx-auto w-50">
+                <li id="select" class="list-group-item mx-auto w-50 invisible">
                     <div class="d-inline d-flex justify-content-between">
                         <div class="float-left custom-control custom-checkbox">
                             <input type="checkbox" class=" custom-control-input" id="selectAll">
