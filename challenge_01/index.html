@@ -4,27 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Projects JavaScript Challenge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../bootstrap.min.css">
+    <style>
+    i{
+        cursor: pointer;
+    }
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+        background-color: #343A40;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
-            <h1 class="display-4 mt-5">1st day Challenge</h1>
-            <h2 class="display-5 mb-5 font-weight-bold mt-3">Todo-List</h2>
+            <h2 class="display-5 mt-5 mb-3 font-weight-bold">Todo-List</h2>
         <div class="content">
-            <form class="form-inline mx-auto">
-                    <div class="form-group mx-auto">
-                        <label for="task">Add your Task</label>
-                        <input type="text" class="form-control mx-3" id="task">
-                        <button type="submit" class="btn btn-dark">Submit</button>
+            <form class="">
+                    <div class="input-group mx-auto w-50">
+                        <input type="text" class="form-control " id="inputTask" placeholder="What need to be done?">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-dark">+</button>
+                        </div>
                     </div>
             </form>
         </div>
-        <div class="result">
-            <div class="text-center my-4"></div>
+        <div class="result mt-5">
+            <h4></h4>
+            <ul class="list-group">
+                <li class="list-group-item mx-auto w-50">
+                    <div class="d-inline d-flex justify-content-between">
+                        <div class="float-left custom-control custom-checkbox">
+                            <input type="checkbox" class=" custom-control-input" id="selectAll">
+                            <label for="selectAll" class="custom-control-label font-weight-bold">Select All</label>
+                        </div>    
+                        <div>  
+                            <i class="fa fa-trash"></i>
+                        </div>
+                        
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
     
-    <script src="todo-list.js" defer></script>
+    <script src="todo-list-oop.js" defer></script>
 </body>
 </html>
