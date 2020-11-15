@@ -83,14 +83,13 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
         document.querySelector('.trash').addEventListener('click', () => {
             let boxes = document.querySelectorAll('#taskAdded');
-
             
             boxes.forEach((box) => {
                 const newVar = box.parentElement.parentElement.parentElement;
                 newVar.remove();
-                
+                Task.counter = 0;
+                Task.tasksRemaining();
             })
-          
         })
 
     }
