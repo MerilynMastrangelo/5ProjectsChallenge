@@ -10,11 +10,10 @@ class Task {
         if (Task.counter === 0) {
             { h4.innerHTML = `No Tasks Remaining`; }
 
-            // document.querySelector('#select').className = "list-group-item mx-auto w-50 visible";
+            document.querySelector('#select').className = "list-group-item mx-auto w-50 invisible";
         } else {
-
             h4.innerHTML = `${Task.counter} Tasks Remaining`;
-            // document.querySelector('#select').className = "list-group-item mx-auto w-50 visible";
+            document.querySelector('#select').className = "list-group-item mx-auto w-50 visible";
         }
     }
 }
@@ -27,12 +26,12 @@ class Ui {
 
             unorderedList.innerHTML += `
             <li class="list-group-item mx-auto w-50">
-            <div class="d-inline d-flex justify-content-between">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="taskAdded">
-                    <label for="taskAdded" class="custom-control-label">${task.name}</label> 
-                </div>   
-                <div> 
+                <div class="float-left">
+                    <div class="delete" id="taskAdded">
+                        ${task.name}
+                    </div>
+                </div>
+                <div class="float-right"> 
                     <i class="fa fa-edit mr-2 edit"></i>
                     <i class="fa fa-trash delete"></i>
                 </div>
@@ -50,11 +49,11 @@ class Ui {
     static deleteTask(el) {
         if (el.classList.contains('delete')) {
             Task.counter--;
-            const rmEl = el.parentElement.parentElement.parentElement;
+            const rmEl = el.parentElement.parentElement;
             rmEl.remove();
+            Task.tasksRemaining();
         }
     }
-    
 }
 //  Event: Display All
 document.addEventListener('DOMContentLoaded', Ui.addTaskToList);
@@ -73,6 +72,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
         // Instanciate a Task
         const newTask = new Task(enteredTask);
 
+        // How much Tasks remaining
         Task.tasksRemaining();
 
         // Add a Task
@@ -81,22 +81,21 @@ document.querySelector('form').addEventListener('submit', (e) => {
         // Clear fields
         Ui.clearFields();
 
+        // Delete everything
         document.querySelector('.trash').addEventListener('click', () => {
             let boxes = document.querySelectorAll('#taskAdded');
-            
-            boxes.forEach((box) => {
-                const newVar = box.parentElement.parentElement.parentElement;
-                newVar.remove();
-                Task.counter = 0;
-                Task.tasksRemaining();
-            })
-        })
 
+            boxes.forEach((box) => {
+                Ui.deleteTask(box)
+            })
+
+            
+        })
     }
 });
 
 
 document.querySelector('ul').addEventListener('click', (e) => {
     Ui.deleteTask(e.target);
-    Task.tasksRemaining();
+    
 })
