@@ -51,8 +51,21 @@ class Ui {
             Task.counter--;
             const rmEl = el.parentElement.parentElement;
             rmEl.remove();
-            Task.tasksRemaining();
         }
+    }
+
+    
+    static showAlert(message, className){
+        const div = document.createElement('div');
+        div.className = `alert alert-${className}`;
+        div.appendChild(document.createTextNode(message));
+        const container = document.querySelector('.container');
+        const h2 = document.querySelector('h2');
+        container.insertBefore(div, h2);
+        // Vanish 3 sec
+        setInterval(()=>{
+            document.querySelector('.alert').remove();
+        }, 3000)
     }
 }
 //  Event: Display All
@@ -87,6 +100,7 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
             boxes.forEach((box) => {
                 Ui.deleteTask(box)
+                Task.tasksRemaining();
             })
 
             
@@ -97,5 +111,5 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
 document.querySelector('ul').addEventListener('click', (e) => {
     Ui.deleteTask(e.target);
-    
+    Task.tasksRemaining();
 })
